@@ -47,19 +47,26 @@
             Gender = new DataGridViewTextBoxColumn();
             Age = new DataGridViewTextBoxColumn();
             Class = new DataGridViewTextBoxColumn();
+            panel_search = new Panel();
+            panel1 = new Panel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.Window;
+            groupBox1.BackgroundImageLayout = ImageLayout.None;
             groupBox1.Controls.Add(text_Search);
             groupBox1.Controls.Add(label_OurStudent);
             groupBox1.Controls.Add(button_Add);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(60, 34);
+            groupBox1.Controls.Add(panel_search);
+            groupBox1.Location = new Point(2, 2);
+            groupBox1.Margin = new Padding(100);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1066, 586);
+            groupBox1.Size = new Size(1000, 500);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
@@ -67,32 +74,34 @@
             // 
             text_Search.BorderStyle = BorderStyle.FixedSingle;
             text_Search.Font = new Font("Segoe UI", 12F);
-            text_Search.Location = new Point(680, 188);
+            text_Search.Location = new Point(650, 200);
             text_Search.Name = "text_Search";
             text_Search.PlaceholderText = "  Search...";
-            text_Search.Size = new Size(161, 39);
-            text_Search.TabIndex = 6;
+            text_Search.Size = new Size(160, 39);
+            text_Search.TabIndex = 1;
             text_Search.TextChanged += text_Search_TextChanged;
             // 
             // label_OurStudent
             // 
             label_OurStudent.AutoSize = true;
-            label_OurStudent.Font = new Font("Arial Rounded MT Bold", 36F);
-            label_OurStudent.Location = new Point(269, 55);
+            label_OurStudent.Font = new Font("Segoe UI Semibold", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_OurStudent.Location = new Point(317, 20);
             label_OurStudent.Name = "label_OurStudent";
-            label_OurStudent.Size = new Size(496, 83);
+            label_OurStudent.RightToLeft = RightToLeft.No;
+            label_OurStudent.Size = new Size(365, 74);
             label_OurStudent.TabIndex = 4;
             label_OurStudent.Text = "Our Students";
+            label_OurStudent.TextAlign = ContentAlignment.TopCenter;
             // 
             // button_Add
             // 
             button_Add.BackColor = Color.SteelBlue;
             button_Add.Font = new Font("Segoe UI", 12F);
             button_Add.ForeColor = SystemColors.WindowText;
-            button_Add.Location = new Point(873, 181);
+            button_Add.Location = new Point(845, 193);
             button_Add.Name = "button_Add";
-            button_Add.Size = new Size(131, 51);
-            button_Add.TabIndex = 5;
+            button_Add.Size = new Size(130, 50);
+            button_Add.TabIndex = 2;
             button_Add.Text = "+Add";
             button_Add.UseVisualStyleBackColor = false;
             button_Add.Click += button_Add_Click;
@@ -101,9 +110,11 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.BackgroundColor = SystemColors.Window;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.SteelBlue;
             dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -113,6 +124,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeight = 40;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { First_Name, Last_Name, Gender, Age, Class });
             dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = SystemColors.Window;
@@ -123,10 +135,11 @@
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.GridColor = SystemColors.GrayText;
-            dataGridView1.Location = new Point(61, 265);
+            dataGridView1.GridColor = SystemColors.WindowText;
+            dataGridView1.Location = new Point(25, 270);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = SystemColors.Control;
             dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F);
@@ -138,29 +151,32 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.SelectionBackColor = Color.YellowGreen;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.ForeColor = Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(230, 240, 167);
             dataGridViewCellStyle9.SelectionForeColor = Color.Black;
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView1.RowTemplate.Height = 40;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(957, 166);
+            dataGridView1.Size = new Size(950, 187);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            dataGridView1.ColumnHeaderMouseDoubleClick += dataGridView1_ColumnHeaderMouseDoubleClick;
             // 
             // First_Name
             // 
             First_Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.YellowGreen;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Beige;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             First_Name.DefaultCellStyle = dataGridViewCellStyle2;
             First_Name.HeaderText = "First Name";
             First_Name.MinimumWidth = 8;
             First_Name.Name = "First_Name";
             First_Name.ReadOnly = true;
-            First_Name.Resizable = DataGridViewTriState.True;
+            First_Name.Resizable = DataGridViewTriState.False;
             // 
             // Last_Name
             // 
@@ -172,6 +188,7 @@
             Last_Name.MinimumWidth = 8;
             Last_Name.Name = "Last_Name";
             Last_Name.ReadOnly = true;
+            Last_Name.Resizable = DataGridViewTriState.False;
             // 
             // Gender
             // 
@@ -183,6 +200,7 @@
             Gender.MinimumWidth = 8;
             Gender.Name = "Gender";
             Gender.ReadOnly = true;
+            Gender.Resizable = DataGridViewTriState.False;
             // 
             // Age
             // 
@@ -194,6 +212,7 @@
             Age.MinimumWidth = 8;
             Age.Name = "Age";
             Age.ReadOnly = true;
+            Age.Resizable = DataGridViewTriState.False;
             // 
             // Class
             // 
@@ -205,20 +224,45 @@
             Class.MinimumWidth = 8;
             Class.Name = "Class";
             Class.ReadOnly = true;
+            Class.Resizable = DataGridViewTriState.False;
+            // 
+            // panel_search
+            // 
+            panel_search.BackColor = Color.SteelBlue;
+            panel_search.Location = new Point(649, 199);
+            panel_search.Name = "panel_search";
+            panel_search.Size = new Size(162, 41);
+            panel_search.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(10, 49, 107);
+            panel1.Controls.Add(groupBox1);
+            panel1.Location = new Point(40, 53);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1004, 504);
+            panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // Our_Student
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScrollMargin = new Size(10, 10);
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1446, 769);
-            Controls.Add(groupBox1);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(1078, 594);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "Our_Student";
+            Padding = new Padding(50);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -234,5 +278,7 @@
         private DataGridViewTextBoxColumn Gender;
         private DataGridViewTextBoxColumn Age;
         private DataGridViewTextBoxColumn Class;
+        private Panel panel1;
+        private Panel panel_search;
     }
 }

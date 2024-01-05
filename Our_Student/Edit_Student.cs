@@ -22,12 +22,26 @@ namespace Our_Student
         {
             get { return studentList; }
         }
+
+
+
+        Our_Student O6 = new Our_Student();
+        int Index;
+
+        //Parameterless constructor
         public Edit_Student()
         {
             InitializeComponent();
+
+            TFR1.Text = "";
+            TFR2.Text = "";
+            TRF3.Text = "";
+            TRF4.Text = "";
+            TRF5.Text = "";
         }
 
-        public Edit_Student(StudentTable TableStudent)
+        //Parameterized Constuctor Recieves Obj & index of dataGridView
+        public Edit_Student(StudentTable TableStudent, int Index)
         {
             InitializeComponent();
             this.TableStudent = TableStudent;
@@ -38,6 +52,12 @@ namespace Our_Student
             text_Age.Text = TableStudent.Age.ToString();
             text_Class.Text = TableStudent.Class;
             textBox_Address.Text = TableStudent.Address;
+            this.Index = Index;
+            TFR1.Text = "";
+            TFR2.Text = "";
+            TRF3.Text = "";
+            TRF4.Text = "";
+            TRF5.Text = "";
         }
 
         private void Edit_Student_Load(object sender, EventArgs e)
@@ -45,56 +65,171 @@ namespace Our_Student
 
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
         {
-            //if field is not filled then "This Field is Required" is displayed below the Textbox
-            if (string.IsNullOrWhiteSpace(text_FirstName.Text))
+            DateTime TimeStart = Convert.ToDateTime(dateTimePicker2.Value);
+            DateTime TimeEnd = DateTime.Today;
+
+            //time span is duration between TimeEnd & TimeStart
+            TimeSpan Span = TimeEnd - TimeStart;
+            var InYears = Math.Truncate(Span.TotalDays / 365);
+            text_Age.Text = Convert.ToString(InYears);
+        }
+
+
+        //used to validate age is number & not accepts other 
+        private void text_Age_TextChanged_1(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(text_Age.Text, "^[0-9]*$"))
             {
-                TFR1.Text = "This field is required";
-                TFR1.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrWhiteSpace(text_LastName.Text))
-            {
-                TFR2.Text = "This field is required";
-                TFR2.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrWhiteSpace(combo_Gender.Text))
-            {
-                TRF3.Text = "This field is required";
-                TRF3.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrWhiteSpace(dateTimePicker2.Text))
-            {
-                TRF4.Text = "This field is required";
-                TRF4.ForeColor = Color.Red;
-            }
-            if (string.IsNullOrWhiteSpace(text_Age.Text))
-            {
-                TRF5.Text = "This field is required";
+                TRF5.Text = "Please enter only numbers in Age.";
+
                 TRF5.ForeColor = Color.Red;
+                text_Age.Text = string.Empty;
+            }
+
+            //Change datetimepicker value as age changes
+            if (int.TryParse(text_Age.Text, out int age))
+            {
+                DateTime todayDate = DateTime.Today;
+                DateTime birthDate = todayDate.AddYears(-age);
+
+                // Update the DateTimePicker value to the calculated birth date
+                dateTimePicker2.Value = birthDate;
+
+            }
+        }
+
+        //Delete Button
+        private void btn_Delete_Click_1(object sender, EventArgs e)
+        {
+            if (O6.dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult Exit;
+                // Asks before delete record of selected row
+                Exit = MessageBox.Show($"Are you sure you want to delete this student record of Name : {TableStudent.FirstName} {TableStudent.LastName}", "Our_Students", MessageBoxButtons.YesNo);
+
+                if (Exit == DialogResult.Yes)
+                {
+                    studentList.RemoveAt(Index);
+                }
+                this.Hide();
+                Our_Student OS1 = new Our_Student(studentList);
+                OS1.Show();
+            }
+        }
+
+        //Save Button
+        private void btn_Save_Click_1(object sender, EventArgs e)
+        {
+
+            //if field is empty then "This Field is Required" is displayed below the Textbox
+            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15)
+            {
+                if (string.IsNullOrWhiteSpace(text_FirstName.Text))
+                {
+                    TFR1.Text = "This field is required";
+                    TFR1.ForeColor = Color.Red;
+                }
+                else
+                {
+                    TFR1.Text = "First Name must be between 3 and 15 characters.";
+                    TFR1.ForeColor = Color.Red;
+                }
+
+            }
+            else
+            {
+                TFR1.Text = "";
+            }
+
+            //Last Name
+            //if field is empty then "This Field is Required" is displayed below the Textbox
+            if (string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18)
+            {
+                if (string.IsNullOrWhiteSpace(text_LastName.Text))
+                {
+                    TFR2.Text = "This field is required";
+                    TFR2.ForeColor = Color.Red;
+                }
+                else
+                {
+                    TFR2.Text = "Last Name must be between 3 and 18 characters.";
+                    TFR2.ForeColor = Color.Red;
+                }
+            }
+            else
+            {
+                TFR2.Text = "";
+            }
+
+            //Gender
+            if (string.IsNullOrWhiteSpace(combo_Gender.Text) || combo_Gender.Text != "Male" && combo_Gender.Text != "Female" && combo_Gender.Text != "Other")
+            {
+                if (string.IsNullOrWhiteSpace(combo_Gender.Text))
+                {
+                    TRF3.Text = "This field is required";
+                    TRF3.ForeColor = Color.Red;
+                    //return;
+                }
+                else
+                {
+                    TRF3.Text = "Please select valid data";
+                    TRF3.ForeColor = Color.Red;
+                }
+            }
+            else
+            {
+                TRF3.Text = "";
             }
 
 
-            if (text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15)
+
+            //if Age should be between 5 to 99 years
+            if (!int.TryParse(text_Age.Text, out int age) || age < 5 || age > 99)
             {
-                MessageBox.Show("First Name must be between 3 and 15 characters.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (age == 0)
+                {
+                    TRF5.Text = "This field is required";
+                    TRF5.ForeColor = Color.Red;
+
+                    //return;
+                }
+                else
+                {
+                    TRF5.Text = "Age must be in between 5 to 99";
+                    TRF5.ForeColor = Color.Red;
+                    return;
+                }
+            }
+            else
+            {
+
+                TRF5.Text = "";
+            }
+            DateTime Time1 = DateTime.Today;
+
+            if (dateTimePicker2.Value.Date >= Time1)
+            {
+                if (dateTimePicker2.Value.Date >= Time1)
+                {
+                    TRF4.Text = "This field is required";
+                    TRF4.ForeColor = Color.Red;
+                }
+
+            }
+            else
+            {
+                TRF4.Text = "";
+            }
+
+            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 ||
+                string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 ||
+                string.IsNullOrWhiteSpace(combo_Gender.Text) || combo_Gender.Text != "Male" && combo_Gender.Text != "Female" && combo_Gender.Text != "Other" ||
+                age < 5 || age > 99 && age == 0 && dateTimePicker2.Value.Date >= Time1)
+            {
                 return;
             }
-            if (text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18)
-            {
-                MessageBox.Show("Last Name must be between 3 and 18 characters.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            int Age = int.Parse(text_Age.Text);
-
-            if (Age <= 5 || Age >= 99)
-            {
-                MessageBox.Show("Age Must be between 5 to 99", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
 
             //Save/ Update the data in the Object of the StudentTable 
             TableStudent.FirstName = text_FirstName.Text;
@@ -103,14 +238,8 @@ namespace Our_Student
             TableStudent.BirthDate = dateTimePicker2.Value;
             TableStudent.Age = int.Parse(text_Age.Text);
             TableStudent.Class = text_Class.Text;
-
-            MessageBox.Show($"student Updated successfully: \n Name : {TableStudent.FirstName} {TableStudent.LastName}\n" +
-                                                                $" Gender : {TableStudent.Gender}\n " +
-                                                                $"Age : {TableStudent.Age} \n " +
-                                                                $"Class : {TableStudent.Class}\n" +
-                                                                $"Address: {TableStudent.Address}\n" +
-                                                                $"BirthDate : {TableStudent.BirthDate}");
-
+            TableStudent.Address = textBox_Address.Text;
+         
             Our_Student Our_Student2 = new Our_Student(studentList);
             this.Hide();
             Our_Student2.Show();
@@ -122,9 +251,11 @@ namespace Our_Student
             dateTimePicker2 = new DateTimePicker();
             text_Age.Clear();
             text_Class.Clear();
+            textBox_Address.Clear();
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
+        //Cancel Button
+        private void btn_Cancel_Click_1(object sender, EventArgs e)
         {
             text_FirstName.Text = TableStudent.FirstName;
             text_LastName.Text = TableStudent.LastName;
@@ -137,47 +268,21 @@ namespace Our_Student
 
 
             // open the Our_Student Page 
-            //this.Hide();
-            //Our_Student OS1 = new Our_Student();
-            //OS1.Show();
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime TimeStart = Convert.ToDateTime(dateTimePicker2.Value);
-            DateTime TimeEnd = DateTime.Today;
-
-            TimeSpan Span = TimeEnd - TimeStart;
-            var InYears = Math.Truncate(Span.TotalDays / 365);
-            text_Age.Text = Convert.ToString(InYears);
-        }
-
-        private void text_Age_TextChanged(object sender, EventArgs e)
-        {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(text_Age.Text, "^[0-9]*$"))
-            {
-                MessageBox.Show("Please enter only numbers in Age.");
-                text_Age.Text = string.Empty;
-            }
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-            DialogResult Exit;
-            Exit = MessageBox.Show("Are you sure you want to delete this student records", "Our_Students", MessageBoxButtons.YesNo);
-
-            if (Exit == DialogResult.Yes)
-            {
-                studentList.RemoveAt(studentList.Count - 1);
-                MessageBox.Show("Student record has been deleted");
-            }
-
             this.Hide();
             Our_Student OS1 = new Our_Student(studentList);
             OS1.Show();
         }
 
-        private void text_FirstName_KeyPress(object sender, KeyPressEventArgs e)
+        private void text_FirstName_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+            // only accepts aplphabets space and backspace
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != '\b')
+                //supresses the keyword if its not valid
+                e.Handled = true;
+        }
+
+        private void text_LastName_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             // only accepts aplphabets space and backspace
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != '\b')
@@ -185,17 +290,73 @@ namespace Our_Student
                 e.Handled = true;
         }
 
-        private void text_LastName_KeyPress(object sender, KeyPressEventArgs e)
+        //Leave Events
+        private void text_FirstName_Leave_1(object sender, EventArgs e)
         {
-            // only accepts aplphabets space and backspace
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != '\b')
-                //supresses the keyword if its not valid
-                e.Handled = true;
+            if (text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15)
+            {
+                TFR1.Text = "First Name must be between 3 and 15 characters.";
+                TFR1.ForeColor = Color.Red;
+            }
+            else
+            {
+                TFR1.Text = "";
+            }
+
         }
 
-        private void label_EditStudent_Click(object sender, EventArgs e)
+        private void text_LastName_Leave_1(object sender, EventArgs e)
         {
-
+            if (text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18)
+            {
+                TFR2.Text = "Last Name must be between 3 and 18 characters.";
+                TFR2.ForeColor = Color.Red;
+            }
+            else
+            {
+                TFR2.Text = "";
+            }
         }
+
+        private void combo_Gender_Leave_1(object sender, EventArgs e)
+        {
+            if (combo_Gender.Text != "Male" && combo_Gender.Text != "Female" && combo_Gender.Text != "Other")
+            {
+                TRF3.Text = "Please select valid data";
+                TRF3.ForeColor = Color.Red;
+            }
+            else
+            { TRF3.Text = ""; }
+        }
+
+        private void text_Age_Leave_1(object sender, EventArgs e)
+        {
+            if (!int.TryParse(text_Age.Text, out int age) || age < 5 || age > 99 && age == 0)
+            {
+                TRF5.Text = "Age must be in between 5 to 99";
+                TRF5.ForeColor = Color.Red;
+            }
+            else
+            {
+                TRF5.Text = "";
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            Panel p = sender as Panel;
+            ControlPaint.DrawBorder(e.Graphics, p.DisplayRectangle, Color.SteelBlue, ButtonBorderStyle.Solid);
+            //ControlPaint.DrawBorder(e.Graphics, this.panel1.ClientRectangle, Color.DarkBlue, ButtonBorderStyle.Solid);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            Panel p = sender as Panel;
+            ControlPaint.DrawBorder(e.Graphics, p.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
+            //ControlPaint.DrawBorder(e.Graphics, this.panel1.ClientRectangle, Color.DarkBlue, ButtonBorderStyle.Solid);
+        }
+
+
+        //--------------------End of code------------------------------------//
     }
 }

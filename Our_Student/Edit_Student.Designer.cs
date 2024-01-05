@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            groupBox_EditStudent = new GroupBox();
             textBox_Address = new TextBox();
             TRF5 = new Label();
             TRF4 = new Label();
@@ -57,86 +58,150 @@
             label_DateOfBirth = new Label();
             label_FirstName = new Label();
             label_EditStudent = new Label();
-            groupBox_AddStudent = new GroupBox();
-            groupBox_AddStudent.SuspendLayout();
+            panel2 = new Panel();
+            panel7 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
+            panel_LastName = new Panel();
+            panel3 = new Panel();
+            panel6 = new Panel();
+            panel1 = new Panel();
+            groupBox_EditStudent.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // groupBox_EditStudent
+            // 
+            groupBox_EditStudent.BackColor = SystemColors.Window;
+            groupBox_EditStudent.Controls.Add(textBox_Address);
+            groupBox_EditStudent.Controls.Add(TRF5);
+            groupBox_EditStudent.Controls.Add(TRF4);
+            groupBox_EditStudent.Controls.Add(TRF3);
+            groupBox_EditStudent.Controls.Add(TFR2);
+            groupBox_EditStudent.Controls.Add(TFR1);
+            groupBox_EditStudent.Controls.Add(dateTimePicker2);
+            groupBox_EditStudent.Controls.Add(label5);
+            groupBox_EditStudent.Controls.Add(label_years);
+            groupBox_EditStudent.Controls.Add(combo_Gender);
+            groupBox_EditStudent.Controls.Add(label4);
+            groupBox_EditStudent.Controls.Add(label3);
+            groupBox_EditStudent.Controls.Add(label2);
+            groupBox_EditStudent.Controls.Add(label1);
+            groupBox_EditStudent.Controls.Add(text_Class);
+            groupBox_EditStudent.Controls.Add(text_Age);
+            groupBox_EditStudent.Controls.Add(text_LastName);
+            groupBox_EditStudent.Controls.Add(text_FirstName);
+            groupBox_EditStudent.Controls.Add(btn_Cancel);
+            groupBox_EditStudent.Controls.Add(btn_Save);
+            groupBox_EditStudent.Controls.Add(btn_Delete);
+            groupBox_EditStudent.Controls.Add(label_Address);
+            groupBox_EditStudent.Controls.Add(label_Class);
+            groupBox_EditStudent.Controls.Add(label_Age);
+            groupBox_EditStudent.Controls.Add(label_LastName);
+            groupBox_EditStudent.Controls.Add(label_Gender);
+            groupBox_EditStudent.Controls.Add(label_DateOfBirth);
+            groupBox_EditStudent.Controls.Add(label_FirstName);
+            groupBox_EditStudent.Controls.Add(label_EditStudent);
+            groupBox_EditStudent.Controls.Add(panel2);
+            groupBox_EditStudent.Controls.Add(panel7);
+            groupBox_EditStudent.Controls.Add(panel5);
+            groupBox_EditStudent.Controls.Add(panel4);
+            groupBox_EditStudent.Controls.Add(panel_LastName);
+            groupBox_EditStudent.Controls.Add(panel3);
+            groupBox_EditStudent.Controls.Add(panel6);
+            groupBox_EditStudent.Location = new Point(3, 3);
+            groupBox_EditStudent.Name = "groupBox_EditStudent";
+            groupBox_EditStudent.Size = new Size(800, 710);
+            groupBox_EditStudent.TabIndex = 1;
+            groupBox_EditStudent.TabStop = false;
             // 
             // textBox_Address
             // 
             textBox_Address.BorderStyle = BorderStyle.FixedSingle;
             textBox_Address.Font = new Font("Segoe UI", 11F);
-            textBox_Address.Location = new Point(231, 546);
+            textBox_Address.Location = new Point(240, 500);
             textBox_Address.Multiline = true;
             textBox_Address.Name = "textBox_Address";
-            textBox_Address.PlaceholderText = "Please enter Address";
-            textBox_Address.Size = new Size(486, 96);
+            textBox_Address.PlaceholderText = "Please enter address";
+            textBox_Address.RightToLeft = RightToLeft.No;
+            textBox_Address.Size = new Size(500, 100);
             textBox_Address.TabIndex = 7;
             // 
             // TRF5
             // 
             TRF5.AutoSize = true;
+            TRF5.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TRF5.ForeColor = Color.Red;
-            TRF5.Location = new Point(518, 435);
+            TRF5.Location = new Point(625, 401);
             TRF5.Name = "TRF5";
-            TRF5.Size = new Size(0, 25);
+            TRF5.Size = new Size(45, 21);
             TRF5.TabIndex = 29;
+            TRF5.Text = "TRF5";
             // 
             // TRF4
             // 
             TRF4.AutoSize = true;
+            TRF4.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TRF4.ForeColor = Color.Red;
-            TRF4.Location = new Point(238, 435);
+            TRF4.Location = new Point(240, 402);
             TRF4.Name = "TRF4";
-            TRF4.Size = new Size(0, 25);
+            TRF4.Size = new Size(45, 21);
             TRF4.TabIndex = 28;
+            TRF4.Text = "TRF4";
             // 
             // TRF3
             // 
             TRF3.AutoSize = true;
+            TRF3.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TRF3.ForeColor = Color.Red;
-            TRF3.Location = new Point(238, 351);
+            TRF3.Location = new Point(240, 332);
             TRF3.Name = "TRF3";
-            TRF3.Size = new Size(0, 25);
+            TRF3.Size = new Size(45, 21);
             TRF3.TabIndex = 27;
+            TRF3.Text = "TRF3";
             // 
             // TFR2
             // 
             TFR2.AutoSize = true;
+            TFR2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TFR2.ForeColor = Color.Red;
-            TFR2.Location = new Point(238, 270);
+            TFR2.Location = new Point(240, 262);
             TFR2.Name = "TFR2";
-            TFR2.Size = new Size(0, 25);
+            TFR2.Size = new Size(45, 21);
             TFR2.TabIndex = 26;
+            TFR2.Text = "TFR2";
             // 
             // TFR1
             // 
             TFR1.AutoSize = true;
+            TFR1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TFR1.ForeColor = Color.Red;
-            TFR1.Location = new Point(238, 195);
+            TFR1.Location = new Point(240, 192);
             TFR1.Name = "TFR1";
-            TFR1.Size = new Size(0, 25);
+            TFR1.Size = new Size(45, 21);
             TFR1.TabIndex = 25;
+            TFR1.Text = "TFR1";
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.CalendarFont = new Font("Segoe UI", 12F);
             dateTimePicker2.CustomFormat = "   dd-MM-yyyy";
-            dateTimePicker2.Font = new Font("Segoe UI", 11F);
+            dateTimePicker2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(231, 395);
+            dateTimePicker2.Location = new Point(240, 360);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.RightToLeft = RightToLeft.No;
-            dateTimePicker2.Size = new Size(241, 37);
+            dateTimePicker2.Size = new Size(241, 39);
             dateTimePicker2.TabIndex = 4;
-            dateTimePicker2.Value = new DateTime(2000, 2, 7, 0, 0, 0, 0);
-            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
+            dateTimePicker2.Value = new DateTime(2024, 1, 2, 0, 0, 0, 0);
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged_1;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 14F);
             label5.ForeColor = Color.Red;
-            label5.Location = new Point(145, 306);
+            label5.Location = new Point(136, 290);
             label5.Name = "label5";
             label5.Size = new Size(29, 38);
             label5.TabIndex = 23;
@@ -145,7 +210,7 @@
             // label_years
             // 
             label_years.AutoSize = true;
-            label_years.Location = new Point(664, 404);
+            label_years.Location = new Point(687, 370);
             label_years.Name = "label_years";
             label_years.Size = new Size(53, 25);
             label_years.TabIndex = 22;
@@ -153,21 +218,30 @@
             // 
             // combo_Gender
             // 
-            combo_Gender.Font = new Font("Segoe UI", 11F);
+            combo_Gender.DisplayMember = "Please select Gender";
+            combo_Gender.DropDownHeight = 120;
+            combo_Gender.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo_Gender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             combo_Gender.ForeColor = SystemColors.WindowText;
             combo_Gender.FormattingEnabled = true;
+            combo_Gender.IntegralHeight = false;
+            combo_Gender.ItemHeight = 32;
             combo_Gender.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            combo_Gender.Location = new Point(231, 310);
+            combo_Gender.Location = new Point(240, 290);
+            combo_Gender.MaximumSize = new Size(240, 0);
+            combo_Gender.MinimumSize = new Size(240, 0);
             combo_Gender.Name = "combo_Gender";
-            combo_Gender.Size = new Size(241, 38);
+            combo_Gender.RightToLeft = RightToLeft.No;
+            combo_Gender.Size = new Size(240, 40);
             combo_Gender.TabIndex = 3;
+            combo_Gender.Leave += combo_Gender_Leave_1;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 14F);
             label4.ForeColor = Color.Red;
-            label4.Location = new Point(566, 393);
+            label4.Location = new Point(578, 360);
             label4.Name = "label4";
             label4.Size = new Size(29, 38);
             label4.TabIndex = 20;
@@ -178,7 +252,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14F);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(171, 225);
+            label3.Location = new Point(176, 220);
             label3.Name = "label3";
             label3.Size = new Size(29, 38);
             label3.TabIndex = 19;
@@ -189,7 +263,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(196, 395);
+            label2.Location = new Point(201, 360);
             label2.Name = "label2";
             label2.Size = new Size(29, 38);
             label2.TabIndex = 18;
@@ -200,7 +274,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(171, 152);
+            label1.Location = new Point(175, 150);
             label1.Name = "label1";
             label1.Size = new Size(29, 38);
             label1.TabIndex = 0;
@@ -209,89 +283,101 @@
             // text_Class
             // 
             text_Class.BorderStyle = BorderStyle.FixedSingle;
-            text_Class.Font = new Font("Segoe UI", 11F);
+            text_Class.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             text_Class.ForeColor = SystemColors.WindowText;
-            text_Class.Location = new Point(231, 477);
+            text_Class.Location = new Point(240, 430);
             text_Class.Name = "text_Class";
             text_Class.PlaceholderText = "  Please enter class";
-            text_Class.Size = new Size(241, 37);
+            text_Class.RightToLeft = RightToLeft.No;
+            text_Class.Size = new Size(241, 39);
             text_Class.TabIndex = 6;
             // 
             // text_Age
             // 
             text_Age.BorderStyle = BorderStyle.FixedSingle;
-            text_Age.Location = new Point(601, 402);
+            text_Age.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            text_Age.Location = new Point(625, 360);
             text_Age.Name = "text_Age";
-            text_Age.Size = new Size(55, 31);
+            text_Age.RightToLeft = RightToLeft.No;
+            text_Age.Size = new Size(55, 39);
             text_Age.TabIndex = 5;
-            text_Age.TextChanged += text_Age_TextChanged;
+            text_Age.TextChanged += text_Age_TextChanged_1;
+            text_Age.Leave += text_Age_Leave_1;
             // 
             // text_LastName
             // 
             text_LastName.BorderStyle = BorderStyle.FixedSingle;
             text_LastName.Font = new Font("Segoe UI", 11F);
             text_LastName.ForeColor = SystemColors.WindowText;
-            text_LastName.Location = new Point(231, 230);
+            text_LastName.Location = new Point(240, 220);
+            text_LastName.MaximumSize = new Size(500, 40);
+            text_LastName.MinimumSize = new Size(500, 40);
             text_LastName.Name = "text_LastName";
             text_LastName.PlaceholderText = "  Please enter Last Name";
-            text_LastName.Size = new Size(486, 37);
+            text_LastName.RightToLeft = RightToLeft.No;
+            text_LastName.Size = new Size(500, 40);
             text_LastName.TabIndex = 2;
-            text_LastName.KeyPress += text_LastName_KeyPress;
+            text_LastName.KeyPress += text_LastName_KeyPress_1;
+            text_LastName.Leave += text_LastName_Leave_1;
             // 
             // text_FirstName
             // 
             text_FirstName.BorderStyle = BorderStyle.FixedSingle;
             text_FirstName.Font = new Font("Segoe UI", 11F);
             text_FirstName.ForeColor = SystemColors.WindowText;
-            text_FirstName.Location = new Point(231, 152);
+            text_FirstName.Location = new Point(240, 150);
+            text_FirstName.MaximumSize = new Size(500, 40);
+            text_FirstName.MinimumSize = new Size(500, 40);
             text_FirstName.Name = "text_FirstName";
             text_FirstName.PlaceholderText = "  Please enter First Name";
-            text_FirstName.Size = new Size(486, 37);
+            text_FirstName.RightToLeft = RightToLeft.No;
+            text_FirstName.Size = new Size(500, 40);
             text_FirstName.TabIndex = 1;
-            text_FirstName.KeyPress += text_FirstName_KeyPress;
+            text_FirstName.KeyPress += text_FirstName_KeyPress_1;
+            text_FirstName.Leave += text_FirstName_Leave_1;
             // 
             // btn_Cancel
             // 
             btn_Cancel.BackColor = SystemColors.ScrollBar;
             btn_Cancel.Font = new Font("Segoe UI", 12F);
-            btn_Cancel.Location = new Point(605, 689);
+            btn_Cancel.Location = new Point(620, 640);
             btn_Cancel.Name = "btn_Cancel";
-            btn_Cancel.Size = new Size(112, 43);
+            btn_Cancel.Size = new Size(120, 50);
             btn_Cancel.TabIndex = 8;
             btn_Cancel.Text = "Cancel";
             btn_Cancel.UseVisualStyleBackColor = false;
-            btn_Cancel.Click += btn_Cancel_Click;
+            btn_Cancel.Click += btn_Cancel_Click_1;
             // 
             // btn_Save
             // 
             btn_Save.BackColor = Color.FromArgb(71, 112, 180);
             btn_Save.Font = new Font("Segoe UI", 12F);
-            btn_Save.Location = new Point(483, 689);
+            btn_Save.Location = new Point(487, 640);
             btn_Save.Name = "btn_Save";
-            btn_Save.Size = new Size(112, 43);
+            btn_Save.Size = new Size(120, 50);
             btn_Save.TabIndex = 7;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
-            btn_Save.Click += btn_Save_Click;
+            btn_Save.Click += btn_Save_Click_1;
             // 
             // btn_Delete
             // 
             btn_Delete.BackColor = SystemColors.ScrollBar;
             btn_Delete.Font = new Font("Segoe UI", 12F);
             btn_Delete.ForeColor = Color.Red;
-            btn_Delete.Location = new Point(45, 689);
+            btn_Delete.Location = new Point(50, 640);
             btn_Delete.Name = "btn_Delete";
-            btn_Delete.Size = new Size(112, 43);
+            btn_Delete.Size = new Size(120, 50);
             btn_Delete.TabIndex = 9;
             btn_Delete.Text = "Delete";
             btn_Delete.UseVisualStyleBackColor = false;
-            btn_Delete.Click += btn_Delete_Click;
+            btn_Delete.Click += btn_Delete_Click_1;
             // 
             // label_Address
             // 
             label_Address.AutoSize = true;
             label_Address.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_Address.Location = new Point(45, 543);
+            label_Address.Location = new Point(50, 500);
             label_Address.Name = "label_Address";
             label_Address.Size = new Size(100, 32);
             label_Address.TabIndex = 14;
@@ -302,7 +388,7 @@
             // 
             label_Class.AutoSize = true;
             label_Class.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_Class.Location = new Point(45, 482);
+            label_Class.Location = new Point(50, 430);
             label_Class.Name = "label_Class";
             label_Class.Size = new Size(68, 32);
             label_Class.TabIndex = 14;
@@ -313,7 +399,7 @@
             // 
             label_Age.AutoSize = true;
             label_Age.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_Age.Location = new Point(503, 400);
+            label_Age.Location = new Point(530, 360);
             label_Age.Name = "label_Age";
             label_Age.Size = new Size(57, 32);
             label_Age.TabIndex = 15;
@@ -323,7 +409,7 @@
             // 
             label_LastName.AutoSize = true;
             label_LastName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_LastName.Location = new Point(45, 230);
+            label_LastName.Location = new Point(50, 220);
             label_LastName.Name = "label_LastName";
             label_LastName.Size = new Size(130, 32);
             label_LastName.TabIndex = 11;
@@ -334,7 +420,7 @@
             // 
             label_Gender.AutoSize = true;
             label_Gender.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_Gender.Location = new Point(45, 312);
+            label_Gender.Location = new Point(50, 290);
             label_Gender.Name = "label_Gender";
             label_Gender.Size = new Size(94, 32);
             label_Gender.TabIndex = 12;
@@ -345,7 +431,7 @@
             // 
             label_DateOfBirth.AutoSize = true;
             label_DateOfBirth.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_DateOfBirth.Location = new Point(45, 400);
+            label_DateOfBirth.Location = new Point(50, 360);
             label_DateOfBirth.Name = "label_DateOfBirth";
             label_DateOfBirth.Size = new Size(160, 32);
             label_DateOfBirth.TabIndex = 13;
@@ -356,7 +442,7 @@
             // 
             label_FirstName.AutoSize = true;
             label_FirstName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            label_FirstName.Location = new Point(45, 157);
+            label_FirstName.Location = new Point(50, 150);
             label_FirstName.Name = "label_FirstName";
             label_FirstName.Size = new Size(132, 32);
             label_FirstName.TabIndex = 10;
@@ -367,69 +453,101 @@
             // 
             label_EditStudent.AutoSize = true;
             label_EditStudent.Font = new Font("Arial Rounded MT Bold", 26F);
-            label_EditStudent.Location = new Point(220, 27);
+            label_EditStudent.Location = new Point(250, 20);
             label_EditStudent.Name = "label_EditStudent";
             label_EditStudent.Size = new Size(335, 60);
             label_EditStudent.TabIndex = 0;
             label_EditStudent.Text = "Edit Student";
             label_EditStudent.TextAlign = ContentAlignment.TopCenter;
-            label_EditStudent.Click += label_EditStudent_Click;
             // 
-            // groupBox_AddStudent
+            // panel2
             // 
-            groupBox_AddStudent.BackColor = SystemColors.Window;
-            groupBox_AddStudent.Controls.Add(textBox_Address);
-            groupBox_AddStudent.Controls.Add(TRF5);
-            groupBox_AddStudent.Controls.Add(TRF4);
-            groupBox_AddStudent.Controls.Add(TRF3);
-            groupBox_AddStudent.Controls.Add(TFR2);
-            groupBox_AddStudent.Controls.Add(TFR1);
-            groupBox_AddStudent.Controls.Add(dateTimePicker2);
-            groupBox_AddStudent.Controls.Add(label5);
-            groupBox_AddStudent.Controls.Add(label_years);
-            groupBox_AddStudent.Controls.Add(combo_Gender);
-            groupBox_AddStudent.Controls.Add(label4);
-            groupBox_AddStudent.Controls.Add(label3);
-            groupBox_AddStudent.Controls.Add(label2);
-            groupBox_AddStudent.Controls.Add(label1);
-            groupBox_AddStudent.Controls.Add(text_Class);
-            groupBox_AddStudent.Controls.Add(text_Age);
-            groupBox_AddStudent.Controls.Add(text_LastName);
-            groupBox_AddStudent.Controls.Add(text_FirstName);
-            groupBox_AddStudent.Controls.Add(btn_Cancel);
-            groupBox_AddStudent.Controls.Add(btn_Save);
-            groupBox_AddStudent.Controls.Add(btn_Delete);
-            groupBox_AddStudent.Controls.Add(label_Address);
-            groupBox_AddStudent.Controls.Add(label_Class);
-            groupBox_AddStudent.Controls.Add(label_Age);
-            groupBox_AddStudent.Controls.Add(label_LastName);
-            groupBox_AddStudent.Controls.Add(label_Gender);
-            groupBox_AddStudent.Controls.Add(label_DateOfBirth);
-            groupBox_AddStudent.Controls.Add(label_FirstName);
-            groupBox_AddStudent.Controls.Add(label_EditStudent);
-            groupBox_AddStudent.Location = new Point(342, 149);
-            groupBox_AddStudent.Name = "groupBox_AddStudent";
-            groupBox_AddStudent.Size = new Size(783, 760);
-            groupBox_AddStudent.TabIndex = 2;
-            groupBox_AddStudent.TabStop = false;
+            panel2.BackColor = Color.SteelBlue;
+            panel2.Location = new Point(237, 497);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(506, 106);
+            panel2.TabIndex = 31;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.SteelBlue;
+            panel7.Location = new Point(238, 428);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(245, 43);
+            panel7.TabIndex = 36;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.SteelBlue;
+            panel5.Location = new Point(238, 358);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(245, 43);
+            panel5.TabIndex = 37;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.SteelBlue;
+            panel4.Location = new Point(238, 288);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(244, 44);
+            panel4.TabIndex = 38;
+            // 
+            // panel_LastName
+            // 
+            panel_LastName.BackColor = Color.SteelBlue;
+            panel_LastName.Location = new Point(238, 218);
+            panel_LastName.Name = "panel_LastName";
+            panel_LastName.Size = new Size(504, 44);
+            panel_LastName.TabIndex = 39;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.SteelBlue;
+            panel3.Location = new Point(238, 148);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(504, 44);
+            panel3.TabIndex = 40;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.SteelBlue;
+            panel6.Location = new Point(623, 358);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(59, 43);
+            panel6.TabIndex = 41;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(10, 49, 107);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(groupBox_EditStudent);
+            panel1.Location = new Point(84, 66);
+            panel1.Name = "panel1";
+            panel1.RightToLeft = RightToLeft.Yes;
+            panel1.Size = new Size(808, 718);
+            panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
             // 
             // Edit_Student
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1466, 1058);
-            Controls.Add(groupBox_AddStudent);
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(978, 844);
+            Controls.Add(panel1);
             Name = "Edit_Student";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit_Student";
             Load += Edit_Student_Load;
-            groupBox_AddStudent.ResumeLayout(false);
-            groupBox_AddStudent.PerformLayout();
+            groupBox_EditStudent.ResumeLayout(false);
+            groupBox_EditStudent.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TextBox textBox_Address;
+        private GroupBox groupBox_EditStudent;
         private Label TRF5;
         private Label TRF4;
         private Label TRF3;
@@ -458,6 +576,14 @@
         private Label label_DateOfBirth;
         private Label label_FirstName;
         private Label label_EditStudent;
-        private GroupBox groupBox_AddStudent;
+        private TextBox textBox_Address;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel7;
+        private Panel panel5;
+        private Panel panel4;
+        private Panel panel_LastName;
+        private Panel panel3;
+        private Panel panel6;
     }
 }
