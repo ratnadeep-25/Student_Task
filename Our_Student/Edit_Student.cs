@@ -45,14 +45,14 @@ namespace Our_Student
         {
             InitializeComponent();
             this.TableStudent = TableStudent;
-            text_FirstName.Text = TableStudent.FirstName;
-            text_LastName.Text = TableStudent.LastName;
-            combo_Gender.Text = TableStudent.Gender;
+            text_FirstName.Text = TableStudent.FirstName.Trim();
+            text_LastName.Text = TableStudent.LastName.Trim();
+            combo_Gender.Text = TableStudent.Gender.Trim();
             text_Age.Text = TableStudent.Age.ToString();
             dateTimePicker2.Value = TableStudent.BirthDate.Date;
             BD = TableStudent.BirthDate.Date;
-            text_Class.Text = TableStudent.Class;
-            textBox_Address.Text = TableStudent.Address;
+            text_Class.Text = TableStudent.Class.Trim();
+            textBox_Address.Text = TableStudent.Address.Trim();
             this.Index = Index;
 
             //MessageBox.Show($"{TableStudent.BirthDate.Date} , {dateTimePicker2.Value} ,{BD}");
@@ -237,13 +237,13 @@ namespace Our_Student
             }
 
             //Save/ Update the data in the Object of the StudentTable 
-            TableStudent.FirstName = text_FirstName.Text;
-            TableStudent.LastName = text_LastName.Text;
-            TableStudent.Gender = combo_Gender.Text;
+            TableStudent.FirstName = text_FirstName.Text.Trim();
+            TableStudent.LastName = text_LastName.Text.Trim();
+            TableStudent.Gender = combo_Gender.Text.Trim();
             TableStudent.BirthDate = dateTimePicker2.Value;
             TableStudent.Age = int.Parse(text_Age.Text);
-            TableStudent.Class = text_Class.Text;
-            TableStudent.Address = textBox_Address.Text;
+            TableStudent.Class = text_Class.Text.Trim();
+            TableStudent.Address = textBox_Address.Text.Trim();
          
             Our_Student Our_Student2 = new Our_Student(studentList);
             this.Hide();
@@ -262,13 +262,13 @@ namespace Our_Student
         //Cancel Button
         private void btn_Cancel_Click_1(object sender, EventArgs e)
         {
-            text_FirstName.Text = TableStudent.FirstName;
-            text_LastName.Text = TableStudent.LastName;
-            combo_Gender.Text = TableStudent.Gender;
+            text_FirstName.Text = TableStudent.FirstName.Trim();
+            text_LastName.Text = TableStudent.LastName.Trim();
+            combo_Gender.Text = TableStudent.Gender.Trim();
             dateTimePicker2.Value = TableStudent.BirthDate;
             text_Age.Text = TableStudent.Age.ToString();
-            text_Class.Text = TableStudent.Class;
-            textBox_Address.Text = TableStudent.Address;
+            text_Class.Text = TableStudent.Class.Trim();
+            textBox_Address.Text = TableStudent.Address.Trim();
 
 
 

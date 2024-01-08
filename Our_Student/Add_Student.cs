@@ -52,8 +52,8 @@ namespace Our_Student
         //Save Button
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            string firstName = text_FirstName.Text;
-            string lastName = text_LastName.Text;
+            string firstName = text_FirstName.Text.Trim();
+            string lastName = text_LastName.Text.Trim();
             //if field is empty then "This Field is Required" is displayed below the Textbox
             if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 ||firstName.Contains("  "))
             {
@@ -176,13 +176,13 @@ namespace Our_Student
             ////for add student  obj of Person Class
             StudentTable STO = new StudentTable
             {
-                FirstName = text_FirstName.Text,
-                LastName = text_LastName.Text,
-                Gender = combo_Gender.Text,
+                FirstName = text_FirstName.Text.Trim(),
+                LastName = text_LastName.Text.Trim(),
+                Gender = combo_Gender.Text.Trim(),
                 BirthDate = birthDate,
                 Age = int.Parse(text_Age.Text),
-                Class = text_Class.Text,
-                Address = textBox_Address.Text
+                Class = text_Class.Text.Trim(),
+                Address = textBox_Address.Text.Trim()
             };
 
             // Adding Student class obj to the studentList
