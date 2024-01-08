@@ -52,12 +52,19 @@ namespace Our_Student
         //Save Button
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            string firstName = text_FirstName.Text;
+            string lastName = text_LastName.Text;
             //if field is empty then "This Field is Required" is displayed below the Textbox
-            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15)
+            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 ||firstName.Contains("  "))
             {
-                if (string.IsNullOrWhiteSpace(text_FirstName.Text))
+                if (string.IsNullOrWhiteSpace(text_FirstName.Text) )
                 {
                     TFR1.Text = "This field is required";
+                    TFR1.ForeColor = Color.Red;
+                }
+                if (firstName.Contains("  "))
+                {
+                    TFR1.Text = "Consecutive spaces are not allowed.";
                     TFR1.ForeColor = Color.Red;
                 }
                 else
@@ -73,12 +80,19 @@ namespace Our_Student
             }
 
             //Last Name
-            if (string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18)
+            if (string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 || lastName.Contains("  "))
             {
+                
+
                 //if field is empty then "This Field is Required" is displayed below the Textbox   
                 if (string.IsNullOrWhiteSpace(text_LastName.Text))
                 {
                     TFR2.Text = "This field is required";
+                    TFR2.ForeColor = Color.Red;
+                }
+                if (lastName.Contains("  "))
+                {
+                    TFR2.Text = "Consecutive spaces are not allowed.";
                     TFR2.ForeColor = Color.Red;
                 }
                 else
@@ -149,8 +163,8 @@ namespace Our_Student
             }
 
 
-            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 ||
-                string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 ||
+            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 || firstName.Contains("  ") ||
+                string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 || lastName.Contains("  ") ||
                 string.IsNullOrWhiteSpace(combo_Gender.Text) || combo_Gender.Text != "Male" && combo_Gender.Text != "Female" && combo_Gender.Text != "Other" ||
                 age < 5 || age > 99 && age == 0 && dateTimePicker2.Value.Date >= Time1)
             {
@@ -375,6 +389,16 @@ namespace Our_Student
         private void groupBox_AddStudent_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void text_FirstName_TextChanged(object sender, EventArgs e)
+        {
+            //string firstName = text_FirstName.Text; 
+            //if (firstName.Contains("  "))
+            //{
+            //    TFR1.Text = "this field required";
+            //    TFR1.ForeColor = Color.Red;
+            //}
         }
     }
 }

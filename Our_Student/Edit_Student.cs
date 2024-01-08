@@ -51,7 +51,6 @@ namespace Our_Student
             text_Age.Text = TableStudent.Age.ToString();
             dateTimePicker2.Value = TableStudent.BirthDate.Date;
             BD = TableStudent.BirthDate.Date;
-            
             text_Class.Text = TableStudent.Class;
             textBox_Address.Text = TableStudent.Address;
             this.Index = Index;

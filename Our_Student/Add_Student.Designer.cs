@@ -276,6 +276,7 @@
             text_FirstName.RightToLeft = RightToLeft.No;
             text_FirstName.Size = new Size(500, 40);
             text_FirstName.TabIndex = 1;
+            text_FirstName.TextChanged += text_FirstName_TextChanged;
             text_FirstName.KeyPress += text_FirstName_KeyPress;
             text_FirstName.Leave += text_FirstName_Leave;
             // 
