@@ -39,7 +39,7 @@ namespace Our_Student
             TRF4.Text = "";
             TRF5.Text = "";
         }
-
+        DateTime BD;
         //Parameterized Constuctor Recieves Obj & index of dataGridView
         public Edit_Student(StudentTable TableStudent, int Index)
         {
@@ -48,11 +48,15 @@ namespace Our_Student
             text_FirstName.Text = TableStudent.FirstName;
             text_LastName.Text = TableStudent.LastName;
             combo_Gender.Text = TableStudent.Gender;
-            dateTimePicker2.Value = TableStudent.BirthDate.Date;
             text_Age.Text = TableStudent.Age.ToString();
+            dateTimePicker2.Value = TableStudent.BirthDate.Date;
+            BD = TableStudent.BirthDate.Date;
+            
             text_Class.Text = TableStudent.Class;
             textBox_Address.Text = TableStudent.Address;
             this.Index = Index;
+
+            //MessageBox.Show($"{TableStudent.BirthDate.Date} , {dateTimePicker2.Value} ,{BD}");
             TFR1.Text = "";
             TFR2.Text = "";
             TRF3.Text = "";
@@ -64,7 +68,6 @@ namespace Our_Student
         {
 
         }
-
         private void dateTimePicker2_ValueChanged_1(object sender, EventArgs e)
         {
             DateTime TimeStart = Convert.ToDateTime(dateTimePicker2.Value);
@@ -74,6 +77,7 @@ namespace Our_Student
             TimeSpan Span = TimeEnd - TimeStart;
             var InYears = Math.Truncate(Span.TotalDays / 365);
             text_Age.Text = Convert.ToString(InYears);
+           
         }
 
 
@@ -97,6 +101,7 @@ namespace Our_Student
                 // Update the DateTimePicker value to the calculated birth date
                 dateTimePicker2.Value = birthDate;
 
+
             }
         }
 
@@ -104,6 +109,7 @@ namespace Our_Student
         private void btn_Delete_Click_1(object sender, EventArgs e)
         {
             if (O6.dataGridView1.SelectedRows.Count > 0)
+            //if (O6.dataGridViewCount()>0)
             {
                 DialogResult Exit;
                 // Asks before delete record of selected row

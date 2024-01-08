@@ -70,6 +70,10 @@ namespace Our_Student
 
         }
 
+        //public int dataGridViewCount()
+        //{
+        //    return dataGridView1.Rows.Count;
+        //}
 
         //Add Button
         private void button_Add_Click(object sender, EventArgs e)

@@ -447,6 +447,7 @@
             groupBox_AddStudent.Size = new Size(800, 710);
             groupBox_AddStudent.TabIndex = 1;
             groupBox_AddStudent.TabStop = false;
+            groupBox_AddStudent.Enter += groupBox_AddStudent_Enter;
             // 
             // dateTimePicker2
             // 
@@ -459,7 +460,7 @@
             dateTimePicker2.RightToLeft = RightToLeft.No;
             dateTimePicker2.Size = new Size(241, 39);
             dateTimePicker2.TabIndex = 4;
-            dateTimePicker2.Value = new DateTime(2024, 1, 4, 0, 0, 0, 0);
+            dateTimePicker2.Value = new DateTime(2024, 1, 5, 0, 0, 0, 0);
             dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // panel2

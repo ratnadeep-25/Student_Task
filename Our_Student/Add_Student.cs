@@ -148,7 +148,7 @@ namespace Our_Student
                 TRF4.Text = "";
             }
 
-            
+
             if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 ||
                 string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 ||
                 string.IsNullOrWhiteSpace(combo_Gender.Text) || combo_Gender.Text != "Male" && combo_Gender.Text != "Female" && combo_Gender.Text != "Other" ||
@@ -370,6 +370,11 @@ namespace Our_Student
 
         private void combo_Gender_Click(object sender, EventArgs e)
         {
+        }
+
+        private void groupBox_AddStudent_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

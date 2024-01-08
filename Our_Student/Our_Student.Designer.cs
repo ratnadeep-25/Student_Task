@@ -37,74 +37,22 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            groupBox1 = new GroupBox();
-            text_Search = new TextBox();
-            label_OurStudent = new Label();
-            button_Add = new Button();
             dataGridView1 = new DataGridView();
             First_Name = new DataGridViewTextBoxColumn();
             Last_Name = new DataGridViewTextBoxColumn();
             Gender = new DataGridViewTextBoxColumn();
             Age = new DataGridViewTextBoxColumn();
             Class = new DataGridViewTextBoxColumn();
+            groupBox1 = new GroupBox();
+            text_Search = new TextBox();
+            label_OurStudent = new Label();
+            button_Add = new Button();
             panel_search = new Panel();
             panel1 = new Panel();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            groupBox1.BackColor = SystemColors.Window;
-            groupBox1.BackgroundImageLayout = ImageLayout.None;
-            groupBox1.Controls.Add(text_Search);
-            groupBox1.Controls.Add(label_OurStudent);
-            groupBox1.Controls.Add(button_Add);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(panel_search);
-            groupBox1.Location = new Point(2, 2);
-            groupBox1.Margin = new Padding(100);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1000, 500);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            // 
-            // text_Search
-            // 
-            text_Search.BorderStyle = BorderStyle.FixedSingle;
-            text_Search.Font = new Font("Segoe UI", 12F);
-            text_Search.Location = new Point(650, 200);
-            text_Search.Name = "text_Search";
-            text_Search.PlaceholderText = "  Search...";
-            text_Search.Size = new Size(160, 39);
-            text_Search.TabIndex = 1;
-            text_Search.TextChanged += text_Search_TextChanged;
-            // 
-            // label_OurStudent
-            // 
-            label_OurStudent.AutoSize = true;
-            label_OurStudent.Font = new Font("Segoe UI Semibold", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_OurStudent.Location = new Point(317, 20);
-            label_OurStudent.Name = "label_OurStudent";
-            label_OurStudent.RightToLeft = RightToLeft.No;
-            label_OurStudent.Size = new Size(365, 74);
-            label_OurStudent.TabIndex = 4;
-            label_OurStudent.Text = "Our Students";
-            label_OurStudent.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // button_Add
-            // 
-            button_Add.BackColor = Color.SteelBlue;
-            button_Add.Font = new Font("Segoe UI", 12F);
-            button_Add.ForeColor = SystemColors.WindowText;
-            button_Add.Location = new Point(845, 193);
-            button_Add.Name = "button_Add";
-            button_Add.Size = new Size(130, 50);
-            button_Add.TabIndex = 2;
-            button_Add.Text = "+Add";
-            button_Add.UseVisualStyleBackColor = false;
-            button_Add.Click += button_Add_Click;
             // 
             // dataGridView1
             // 
@@ -226,6 +174,58 @@
             Class.ReadOnly = true;
             Class.Resizable = DataGridViewTriState.False;
             // 
+            // groupBox1
+            // 
+            groupBox1.BackColor = SystemColors.Window;
+            groupBox1.BackgroundImageLayout = ImageLayout.None;
+            groupBox1.Controls.Add(text_Search);
+            groupBox1.Controls.Add(label_OurStudent);
+            groupBox1.Controls.Add(button_Add);
+            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(panel_search);
+            groupBox1.Location = new Point(2, 2);
+            groupBox1.Margin = new Padding(100);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1000, 500);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            // 
+            // text_Search
+            // 
+            text_Search.BorderStyle = BorderStyle.FixedSingle;
+            text_Search.Font = new Font("Segoe UI", 12F);
+            text_Search.Location = new Point(650, 200);
+            text_Search.Name = "text_Search";
+            text_Search.PlaceholderText = "  Search...";
+            text_Search.Size = new Size(160, 39);
+            text_Search.TabIndex = 1;
+            text_Search.TextChanged += text_Search_TextChanged;
+            // 
+            // label_OurStudent
+            // 
+            label_OurStudent.AutoSize = true;
+            label_OurStudent.Font = new Font("Segoe UI Semibold", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label_OurStudent.Location = new Point(317, 20);
+            label_OurStudent.Name = "label_OurStudent";
+            label_OurStudent.RightToLeft = RightToLeft.No;
+            label_OurStudent.Size = new Size(365, 74);
+            label_OurStudent.TabIndex = 4;
+            label_OurStudent.Text = "Our Students";
+            label_OurStudent.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // button_Add
+            // 
+            button_Add.BackColor = Color.SteelBlue;
+            button_Add.Font = new Font("Segoe UI", 12F);
+            button_Add.ForeColor = SystemColors.WindowText;
+            button_Add.Location = new Point(845, 193);
+            button_Add.Name = "button_Add";
+            button_Add.Size = new Size(130, 50);
+            button_Add.TabIndex = 2;
+            button_Add.Text = "+Add";
+            button_Add.UseVisualStyleBackColor = false;
+            button_Add.Click += button_Add_Click;
+            // 
             // panel_search
             // 
             panel_search.BackColor = Color.SteelBlue;
@@ -259,9 +259,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -269,7 +269,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        public DataGridView dataGridView1;
         private TextBox text_Search;
         private Label label_OurStudent;
         private Button button_Add;
@@ -280,5 +279,6 @@
         private DataGridViewTextBoxColumn Class;
         private Panel panel1;
         private Panel panel_search;
+        public DataGridView dataGridView1;
     }
 }
