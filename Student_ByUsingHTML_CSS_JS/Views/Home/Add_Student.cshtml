@@ -1,0 +1,25 @@
+﻿@*@page
+@model Student_ByUsingHTML_CSS_JS.Views.Home.Add_StudentModel *@
+@{
+    ViewData["Title"] = "Add Student";
+}
+<style>
+    div{
+        text-align : center;
+    }
+</style>
+
+<div class="container">
+    <form method="post">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname"/>
+        <br/>
+        <br />
+
+        <lable for="lname">Last Name</lable>
+        <input type="text" id="lname" name="lastname"/>
+        <br />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+</div>

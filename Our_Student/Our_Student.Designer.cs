@@ -189,6 +189,7 @@
             groupBox1.Size = new Size(1000, 500);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // text_Search
             // 

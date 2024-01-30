@@ -1,0 +1,60 @@
+﻿
+body {
+    align-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.Table {
+    align-content: center;
+}
+
+.contains {
+    width: 80%;
+    margin: 20px auto;
+    border: solid 3px;
+    border-color: steelblue;
+    top: 10px;
+    left: 80px;
+    width: 600px;
+    height: 550px;
+    align-content: start
+}
+
+.container {
+    width: 50%; /* Adjust the width as needed */
+    margin: auto; /* Center the container horizontally */
+    padding: 20px; /* Optional padding */
+    /* Add any other styles you need */
+
+    label
+
+{
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 80px;
+    border: 0px;
+}
+
+input, select {
+    width: 400px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+select option{
+    
+}
+
+textarea {
+    width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+}

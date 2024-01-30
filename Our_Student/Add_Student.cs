@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Our_Student
@@ -55,9 +56,9 @@ namespace Our_Student
             string firstName = text_FirstName.Text.Trim();
             string lastName = text_LastName.Text.Trim();
             //if field is empty then "This Field is Required" is displayed below the Textbox
-            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 ||firstName.Contains("  "))
+            if (string.IsNullOrWhiteSpace(firstName) || firstName.Length < 3 || firstName.Length >= 15 || firstName.Contains("  ") || firstName.Replace(" ", "").Length < 3)
             {
-                if (string.IsNullOrWhiteSpace(text_FirstName.Text) )
+                if (string.IsNullOrWhiteSpace(firstName))
                 {
                     TFR1.Text = "This field is required";
                     TFR1.ForeColor = Color.Red;
@@ -80,9 +81,9 @@ namespace Our_Student
             }
 
             //Last Name
-            if (string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 || lastName.Contains("  "))
+            if (string.IsNullOrWhiteSpace(lastName) || lastName.Length < 2 || lastName.Length > 18 || lastName.Contains("  ") || lastName.StartsWith(" ") || lastName.EndsWith(" "))
             {
-                
+
 
                 //if field is empty then "This Field is Required" is displayed below the Textbox   
                 if (string.IsNullOrWhiteSpace(text_LastName.Text))
@@ -94,6 +95,16 @@ namespace Our_Student
                 {
                     TFR2.Text = "Consecutive spaces are not allowed.";
                     TFR2.ForeColor = Color.Red;
+                }
+                if (lastName.StartsWith(" "))
+                {
+                    TFR1.Text = "starting spaces are not allowed.";
+                    TFR1.ForeColor = Color.Red;
+                }
+                if (lastName.EndsWith(" "))
+                {
+                    TFR1.Text = "Ending spaces are not allowed.";
+                    TFR1.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -163,8 +174,8 @@ namespace Our_Student
             }
 
 
-            if (string.IsNullOrWhiteSpace(text_FirstName.Text) || text_FirstName.Text.Length < 3 || text_FirstName.Text.Length > 15 || firstName.Contains("  ") ||
-                string.IsNullOrWhiteSpace(text_LastName.Text) || text_LastName.Text.Length < 3 || text_LastName.Text.Length > 18 || lastName.Contains("  ") ||
+            if (string.IsNullOrWhiteSpace(firstName) || firstName.Length < 3 || firstName.Length > 15 && firstName.Contains("  ") || firstName.Replace(" ", "").Length < 3||//!firstName.Trim().Any(char.IsLetter) ||
+                string.IsNullOrWhiteSpace(lastName) || lastName.Length < 2 || lastName.Length > 18 && lastName.Contains("  ") || lastName.Replace(" ", "").Length < 3 ||
                 string.IsNullOrWhiteSpace(combo_Gender.Text) || combo_Gender.Text != "Male" && combo_Gender.Text != "Female" && combo_Gender.Text != "Other" ||
                 age < 5 || age > 99 && age == 0 && dateTimePicker2.Value.Date >= Time1)
             {
@@ -239,6 +250,7 @@ namespace Our_Student
             this.Hide();
             O2.Show();
         }
+
 
         //cancel button 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -399,6 +411,11 @@ namespace Our_Student
             //    TFR1.Text = "this field required";
             //    TFR1.ForeColor = Color.Red;
             //}
+        }
+
+        private void combo_Gender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,133 @@
+﻿@page 
+@model Student.Pages.Add_StudentModel
+@{
+    ViewData["Title"] = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Add Student</title>
+   
+    <style>
+        body{
+            align-content : center;
+        }
+
+        .Table {
+            align-content: center;
+        }
+
+        .contains {
+            width: 80%;
+            margin: 20px auto;
+            border: solid 3px;
+            border-color: steelblue;
+            top: 10px;
+            left: 80px;
+            width: 600px;
+            height: 550px;
+            align-content :start
+        }
+        .container {
+            width: 50%; /* Adjust the width as needed */
+            margin: auto; /* Center the container horizontally */
+            padding: 20px; /* Optional padding */
+            /* Add any other styles you need */
+
+       label{
+            display:inline-block;
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        button{
+            width : 80px;
+            border : 0px;
+        }
+        input, select {
+            width: 400px;
+            height: 30px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 400px;
+            
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        }
+    </style>
+</head>
+
+<body class="text-center">
+    
+    <div class="contains">
+        <h1>Add Student</h1>
+        <form method="post" asp-page-handler="OnPost">
+            <div>
+                <label for="FirstName" >First Name </label> 
+                <input type="text" id="FirstName" name="FirstName" placeholder="Please enter First Name"  required>
+            </div>
+           
+
+            <div>
+                <label for="LastName" >Last Name </label>
+                <input type="text" id="LastName" name="LastName" placeholder="Please enter Last Name" required>
+            </div>
+         
+
+            <div>
+                <label for="Gender" style="left : 110px;">Gender</label>
+                <select id="Gender" name="Gender" placeholder="" required>
+                    
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+
+            <div>
+                <label for="birthDate">Birth Date</label>
+                <input type="date" id="birthDate" name="birthDate" class="calendar-input">
+
+                <label for="Age">Age</label>
+                <input type="number" id="Age" name="Age" required />
+            </div>
+           
+
+            <div>
+                <label for="Class" >Class</label>
+                <input type="text" id="Class" name="Class" placeholder="Please enter class"  />
+            </div>
+           
+
+            <div>
+                <label for="Address" >Address</label>
+                <textarea id="Address" name="Address" placeholder="Please enter class"></textarea>
+            </div>
+            <br />
+
+            <div>
+                <button type="submit" style="color : red; background-color : lightgray">Delete</button>
+
+               @*  <button type="submit" style="color : black; background-color : steelblue"><a asp-page="/Index">Save</a></button> *@
+                <button type="submit" style="color : black; background-color : steelblue">Save</button>
+
+                <button type="submit" style="color : black; background-color : lightgray">Cancel</button>
+                
+
+            </div>
+            <br />
+
+        </form>
+    </div>
+
+    
+</body>
+</html>

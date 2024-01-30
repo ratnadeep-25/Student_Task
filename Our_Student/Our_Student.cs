@@ -21,17 +21,18 @@ namespace Our_Student
             // Used for 
             foreach (var student in ST1)
             {
-                dataGridView1.Rows.Add(student.FirstName,
-                                       student.LastName,
-                                       student.Gender,
+                dataGridView1.Rows.Add(student.FirstName.Trim(),
+                                       student.LastName.Trim(),
+                                       student.Gender.Trim(),
                                        student.Age,
-                                       student.Class);
+                                       student.Class.Trim());
             }
+            //Display two rows
             if (dataGridView1.Rows.Count > 2)
                 dataGridView1.Rows[2].Selected = true;
 
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
+            //Default Row Selection
 
             if (dataGridView1.Rows.Count > 0)
             {
@@ -51,11 +52,11 @@ namespace Our_Student
             dataGridView1.Rows.Clear();
             foreach (var student in ST1)
             {
-                dataGridView1.Rows.Add(student.FirstName,
-                    student.LastName,
-                    student.Gender,
+                dataGridView1.Rows.Add(student.FirstName.Trim(),
+                    student.LastName.Trim(),
+                    student.Gender.Trim(),
                     student.Age,
-                    student.Class);
+                    student.Class.Trim());
             }
         }
 
@@ -123,7 +124,7 @@ namespace Our_Student
             this.Hide();
         }
 
-        
+
         private void OpenAddStudentFormForEdit(StudentTable student, int Index)
         {
 
@@ -142,6 +143,11 @@ namespace Our_Student
         {
             Panel p = sender as Panel;
             ControlPaint.DrawBorder(e.Graphics, p.DisplayRectangle, Color.SteelBlue, ButtonBorderStyle.Solid);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

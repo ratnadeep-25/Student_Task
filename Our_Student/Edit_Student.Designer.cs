@@ -114,6 +114,7 @@
             groupBox_EditStudent.Size = new Size(800, 710);
             groupBox_EditStudent.TabIndex = 1;
             groupBox_EditStudent.TabStop = false;
+            groupBox_EditStudent.Enter += groupBox_EditStudent_Enter;
             // 
             // textBox_Address
             // 

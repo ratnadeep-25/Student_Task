@@ -1,0 +1,70 @@
+﻿@page
+@model WebApplication1.Pages.editModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+</head>
+<body>
+    <h1>Edit Student</h1>
+    <form id="editForm">
+        <label for="editFirstName">First Name:</label>
+        <input type="text" id="editFirstName" required>
+
+        <label for="editLastName">Last Name:</label>
+        <input type="text" id="editLastName" required>
+
+        <button type="button" onclick="saveEditedStudent()">Save Changes</button>
+        <button type="button" onclick="deleteStudent()">Delete</button>
+
+        <!-- Add button to navigate to the index page -->
+        <button type="button" onclick="goToIndex()">Go to Index</button>
+    </form>
+
+    <script>
+    // Retrieve the selected student from session storage
+    var selectedStudent = JSON.parse(sessionStorage.getItem("selectedStudent")) || {};
+
+    // Pre-fill the form with the selected student's data
+    document.getElementById("editFirstName").value = selectedStudent.FirstName || "";
+    document.getElementById("editLastName").value = selectedStudent.LastName || "";
+
+    function saveEditedStudent() {
+        // Update the selected student with the edited data
+        selectedStudent.FirstName = document.getElementById("editFirstName").value;
+        selectedStudent.LastName = document.getElementById("editLastName").value;
+
+        // Update the student list in session storage
+        var studentList = JSON.parse(sessionStorage.getItem("studentList")) || [];
+        var index = studentList.findIndex(s => s.FirstName === selectedStudent.FirstName && s.LastName === selectedStudent.LastName);
+        
+        if (index !== -1) {
+            studentList[index] = selectedStudent;
+            sessionStorage.setItem("studentList", JSON.stringify(studentList));
+        }
+
+        // Redirect back to the index page
+        window.location.href = "/Index";
+    }
+
+    function deleteStudent() {
+        // Remove the selected student from the list
+        var studentList = JSON.parse(sessionStorage.getItem("studentList")) || [];
+        var updatedStudentList = studentList.filter(s => s.FirstName !== selectedStudent.FirstName || s.LastName !== selectedStudent.LastName);
+        sessionStorage.setItem("studentList", JSON.stringify(updatedStudentList));
+
+        // Redirect back to the index page
+        window.location.href = "/Index";
+    }
+
+    // Function to navigate to the index page
+    function goToIndex() {
+        window.location.href = "/Index";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<head>
+    <title>Our Student</title>
+    <link rel="stylesheet" href="~/css/Index.css" />
+    @* <link rel="" href="~/css/Index.css" /> *@
+    @* <script src="~/js/Index.js"></script> *@
+</head>
+
+<body>
+
+
+<h1>Our Students</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Class</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model.Students)
+        {
+            <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Age</td>
+                <td>@student.Class</td>
+                <td>@student.DateOfBirth.ToShortDateString()</td>
+                <td>
+                    <a asp-page="AddEdit" asp-route-id="@student.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-page="AddEdit">Add Student</a>
+    </body>

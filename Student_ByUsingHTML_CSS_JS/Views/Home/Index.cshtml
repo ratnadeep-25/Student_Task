@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Our Student";
+}
+<style>
+    table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 20px auto;
+       
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: Left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .rounded-button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: steelblue;
+        color: black;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        position: fixed; /* Fixed position */
+        top: 20px; /* Distance from the bottom */
+        right: 20px; /* Distance from the right */
+        cursor: pointer;
+    }
+</style>
+
+
+
+<body>
+<div class="text-center">
+    <h1>Our Student</h1>
+</div>
+
+    <button class="rounded-button">Add Student</button>
+    <div class="text-center">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Class</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ajay</td>
+                    <td>Patil</td>
+                    <td>Male</td>
+                    <td>15</td>
+                    <td>12th</td>
+                </tr>
+                <tr>
+                    <td>Ranjeet</td>
+                    <td>Jadhav</td>
+                    <td>Male</td>
+                    <td>17</td>
+                    <td>10th</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>

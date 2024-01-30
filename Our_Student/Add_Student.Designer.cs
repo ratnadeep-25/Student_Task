@@ -89,6 +89,7 @@
             combo_Gender.RightToLeft = RightToLeft.No;
             combo_Gender.Size = new Size(240, 40);
             combo_Gender.TabIndex = 3;
+            combo_Gender.SelectedIndexChanged += combo_Gender_SelectedIndexChanged;
             combo_Gender.Click += combo_Gender_Click;
             combo_Gender.Leave += combo_Gender_Leave;
             // 

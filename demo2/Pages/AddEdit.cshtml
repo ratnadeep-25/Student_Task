@@ -1,0 +1,25 @@
+﻿@page
+@model demo2.Pages.AddEditModel
+@{
+}
+
+<h1>Add/Edit Student</h1>
+
+<form method="post">
+    
+    <label for="FirstName" First Name:</label>
+    <input type="text" id="FirstName" name="FirstName" value="@Model.Student.FirstName" />
+
+    <label for="LastName" Last Name:</label>
+    <input type="text" id="LastName" name="LastName" value="@Model.Student.LastName" />
+
+    <label for="Gender" Gender:</label>
+    <input type="text" id="Gender" name="Gender" value="@Model.Student.Gender" />
+
+  
+
+    <button type="submit">Submit</button>
+</form>
+
+<a asp-page="Index">Back to Students</a>
+}

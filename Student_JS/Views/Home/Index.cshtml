@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Table</title>
+    <link rel="stylesheet" href="~/css/Index.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Display Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="dataTableBody">
+                <!-- Data will be displayed here dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <style></style>
+    //<script src="~/css/"></script>
+    <script>
+        // Load and display data on page load
+        displayData();
+    </script>
+</body>
+</html>

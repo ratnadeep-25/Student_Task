@@ -1,0 +1,86 @@
+﻿@page
+@model demo11.Pages.AddModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+</head>
+<body>
+
+    <h1>Page 1</h1>
+
+    <form id="dataForm" onsubmit="sendDataToPage2(); return false;">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <script>
+        function sendDataToPage2() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            // Student S = new Student();
+            // S.STList.Add(new Student { FirstName =firstName, LastName = lastName });
+            // Redirect to Page2 with the parameters in the query string
+            window.location.href = '/Index?FirstName=' + encodeURIComponent(firstName) + '&LastName=' + encodeURIComponent(lastName);
+        }
+    </script>
+
+    @* <script>
+        function sendDataToPage2() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+
+            // Retrieve the existing list from session storage
+            var existingList = JSON.parse(sessionStorage.getItem('StudentList')) || [];
+
+            // Add the new student to the list
+            existingList.push({ FirstName: firstName, LastName: lastName });
+
+            // Store the updated list in session storage
+            sessionStorage.setItem('StudentList', JSON.stringify(existingList));
+
+            // Redirect to Page2
+            window.location.href = '/Index';
+        }
+    </script> *@
+
+</body>
+</html>
+
+
+@* <!DOCTYPE html>
+<html>
+<head>
+    <title>Page 1</title>
+</head>
+<body>
+
+    <h1>Page 1</h1>
+
+    <script>
+        function sendDataToPage2() {
+            var dataToSend = {
+                parameter1: "R",
+                parameter2: "P"
+            };
+
+            // Convert the JavaScript object to a query string
+            var queryString = Object.keys(dataToSend).map(key => key + '=' + dataToSend[key]).join('&');
+
+            // Redirect to Page2 with the query string
+            window.location.href = '/D?' + queryString;
+        }
+    </script>
+
+    <button onclick="sendDataToPage2()">Go to Page 2</button>
+
+</body>
+</html> *@

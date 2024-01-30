@@ -1,0 +1,69 @@
+﻿@page
+@model demo11.Pages.IndexModel
+@{
+    // string firstName = Request.Query["firstName"];
+    // string lastName = Request.Query["lastName"];
+
+
+   
+    // List<Student> SL = new List<Student>();
+    // Student F = new Student(SL);
+    
+    // SL.Add(new Student { FirstName = "Vijay", LastName = "Jadhav" });
+    // SL.Add(new Student { FirstName = "Mahesh", LastName = "Patil" });
+    //  SL.Add(new Student { FirstName = firstName, LastName = lastName });
+    
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: steelblue;
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="align-content: center">
+
+    <h1>Page 2</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* @foreach (var savedStudent in F.STList) *@
+            @foreach (var savedStudent in Model.StudentList )
+            {
+                <tr>
+                    <td>@savedStudent.FirstName</td>
+                    <td>@savedStudent.LastName</td>
+                </tr>
+            }
+           
+        </tbody>
+    </table>
+    <form method="post">
+        <button asp-page="/Add">Go to Page 1</button>
+    </form>
+
+</body>
+</html>

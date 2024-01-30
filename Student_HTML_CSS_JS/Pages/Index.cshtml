@@ -1,0 +1,66 @@
+﻿@page
+@using Student_HTML_CSS_JS.Pages
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+    <script src="~/js/Index.js"></script>
+</head>
+
+<body>
+    <div class="contains">
+
+        <h1 class="h1">Our Student</h1>
+
+        <div>
+            <div class="SearchAdd">
+                <label for="searchBox"></label>
+                <input type="text" id="searchBox" oninput="filterTable()" placeholder="Search..." />
+            </div>
+
+            <div>
+                <button onclick="AddForm()" class="rounded-button">+Add</button>
+            </div>
+
+        </div>
+
+
+        <div class="text-center" id="table-container">
+
+            @* <table  id="userTable">
+            <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Class</th>
+            </tr>
+            </table> *@
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Class</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<h1>Our Students</h1>
+
+<ul>
+    @foreach (var student in Model.Students)
+    {
+        <li>
+            @student.FirstName
+            @student.LastName
+            @student.Gender
+            <a asp-page="AddEdit" asp-route-id="@student.Id">Edit</a>
+        </li>
+    }
+</ul><a asp-page="AddEdit">Add Student</a>

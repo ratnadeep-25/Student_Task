@@ -1,0 +1,57 @@
+﻿@page
+@model WebApplication1.Pages.AddModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form id="studentForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+
+        <button type="button" onclick="addStudent()">Add Student</button>
+
+        <!-- Add button to navigate to the index page -->
+        <button type="button" onclick="goToIndex()">Go to Index</button>
+    </form>
+
+    <script>
+        function addStudent() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+
+            // Create a student object
+            var student = {
+                FirstName: firstName,
+                LastName: lastName
+            };
+
+            // Retrieve existing student list from local storage (if any)
+            var studentList = JSON.parse(localStorage.getItem("studentList")) || [];
+
+            // Add the new student to the list
+            studentList.push(student);
+
+            // Save the updated list back to local storage
+            localStorage.setItem("studentList", JSON.stringify(studentList));
+
+            // Redirect to the index page
+            window.location.href = "/index";
+        }
+
+        // Function to navigate to the index page
+        function goToIndex() {
+            window.location.href = "/index";
+        }
+    </script>
+</body>
+</html>

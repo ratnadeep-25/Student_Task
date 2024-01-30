@@ -1,0 +1,120 @@
+﻿@page
+
+@model Our_Student_html.Pages.AddDataModel
+
+@{
+}
+@section Scripts {
+
+    <script src="~/js/AddPage.js"></script>
+}
+@section styles {
+    <link rel="Stylesheet" href="~/css/AddOn.css" />
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Student</title>
+    @* <link rel="stylesheet" href="~/css/AddEdit.css" /> *@
+    @* <script src="~/js/AddPage.js"></script> *@
+    
+</head>
+<body >
+    <div class="contains">
+    <h1 id="Add">Add Student</h1>
+
+
+        <form id="userForm">
+            <div class="first">
+                <div class="first1">
+                <div class="flex-container">
+                    <div class="line-1"><label for="firstName" id="lb" placeholder="Please enter First Name">First Name<span class="required"> *</span></label></div>
+                        <div class="line-2"><input  type="text" id="firstName" name="firstName" placeholder="Please enter First Name" onkeypress="return /[a-z ]/i.test(event.key)" /></div>
+                </div>
+                <div id="first-name-err" class="errorf"></div>
+                </div>
+            </div>
+
+
+            <div class="first">
+                <div class="flex-container">
+                    <div class="line-1"><label for="lastName" id="lb">Last Name<span class="required"> *</span></label></div>
+                    <div class="line-3">
+                        <input type="text" id="lastName" name="lastName" placeholder="Please enter Last Name" onkeypress="return /[a-z ]/i.test(event.key)" />
+                        </div>
+                </div>
+                <div id="last-name-err" class="errorl"></div>
+            </div>
+
+            <div class="first">
+                <div class="flex-container">
+                    <div class="line-1"><label for="gender" id="lb">Gender<span class="required"> *</span></label></div>
+                
+                    <select   id="gender" style="height : 30px" name="gender"  required>
+                        <option value="" disabled selected >Please select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select><br>
+                </div>
+                <div id="gender-err" class="errorg"></div>
+            </div>
+
+            <div class="first">
+                <div class="flex-container">
+                    <div >
+                        <label for="dob" id="lb" value="">Date of Birth<span class="required"> *</span></label>
+                        <input type="date" id="dob" >
+                   
+                    </div>
+                
+                    <div >
+                        <label for="age" class="D-A2A" id="age1">Age<span class="required"> *</span></label>
+                        <input class="D-A2" type="number" id="age" name="age" maxlength="2"/>
+                    </div>
+                    @* <label for="years" id="years">years</label> *@
+                    <h4 for ="years" id="years">years</h4>
+                </div>
+                <div class="flex-container">
+                    <div id="dob-err" class="errord"></div>
+                    <div id="age-err" class="errora"></div>
+                </div>
+            </div>
+            
+           
+            <div class="first">
+                <div class="flex-container">
+                    <div class="line-1"> <label for="sclass" id="lb">Class</label></div>
+                    <div class="D-A1C"><input type="text" id="sclass" name="sclass" placeholder="Please enter Class" /></div>
+                </div>
+            </div>
+
+             <div class="first">
+                <div class="flex-container">
+                    <div class="line-1">
+                        <label for="address" id="lb">Address:</label>
+                    </div>
+                    <div class="line-4">
+                        <textarea type="text" id="address" name="address" rows="3"
+                                  style="resize: none;" placeholder="Please enter Address"></textarea>
+                    </div>
+                </div>
+            </div>
+
+                
+            
+           
+            <div class="flex-container">
+                @* <button type="button" id="delete1" style="color : red; background-color : lightgray; " onclick="delete1()">Delete</button> *@
+                @* <button type="button" style="color : red; background-color : lightgray;" class="delete1">Delete</button> *@
+               
+                <button type="button" id="save1" style="color : black; background-color : steelblue" onclick="Save1()">Save</button>
+
+                <button onclick="cancelUser()" type="button" style="color : black; background-color : lightgray" class="cancel1">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

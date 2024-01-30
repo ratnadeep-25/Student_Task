@@ -1,0 +1,157 @@
+﻿@page 
+@model Student.Pages.Add_StudentModel
+@{
+    ViewData["Title"] = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Add Student</title>
+   
+    <style>
+        body{
+            align-content : center;
+        }
+
+        .Table {
+            align-content: center;
+        }
+
+        .contains {
+            width: 80%;
+            margin: 20px auto;
+            border: solid 3px;
+            border-color: steelblue;
+            top: 10px;
+            left: 80px;
+            width: 600px;
+            height: 550px;
+            align-content :start
+        }
+        .container {
+            width: 50%; /* Adjust the width as needed */
+            margin: auto; /* Center the container horizontally */
+            padding: 20px; /* Optional padding */
+            /* Add any other styles you need */
+
+       label{
+            display:inline-block;
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        button{
+            width : 80px;
+            border : 0px;
+        }
+        input, select {
+            width: 400px;
+            height: 30px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 400px;
+            
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        }
+    </style>
+</head>
+
+<body class="text-center">
+    
+    <div class="contains">
+        <h1>Add Student</h1>
+        <form method="post" asp-page-handler="OnPost">
+            <div>
+                <label for="FirstName" >First Name </label> 
+                <input type="text" id="firstName" name="FirstName" placeholder="Please enter First Name" required>
+            </div>
+           
+
+            <div>
+                <label for="LastName" >Last Name </label>
+                <input type="text" id="lastName" name="LastName" placeholder="Please enter Last Name" required>
+            </div>
+         
+            <div>
+                <label for="Gender" style="left : 110px;">Gender</label>
+                <select id="gender" name="Gender" placeholder="" required>
+                    
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+
+            <div>
+                <label for="birthDate">Birth Date</label>
+                <input type="date" id="birthDate" name="birthDate" class="calendar-input">
+
+                <label for="Age">Age</label>
+                <input type="number" id="age" name="Age" required />
+            </div>
+           
+
+            <div>
+                <label for="Class1" >Class</label>
+                <input type="text" id="class1" name="Class1" placeholder="Please enter class"  />
+            </div>
+           
+
+            <div>
+                <label for="Address" >Address</label>
+                <textarea id="address" name="Address" placeholder="Please enter class"></textarea>
+            </div>
+            <br />
+
+            <div>
+                <button type="submit" style="color : red; background-color : lightgray">Delete</button>
+
+                <button type="submit" style="color : black; background-color : steelblue"><a asp-page="/Index">Save</a></button>
+             @* <button type="submit" style="color : black; background-color : steelblue">Save</button> *@
+
+                <button type="submit" style="color : black; background-color : lightgray">Cancel</button>
+                
+
+            </div>
+            <br />
+
+        </form>
+    </div>
+    <script>
+
+        // function sendDataToPage2() {
+        //     var firstName = document.getElementById("firstName").value;
+        //     var lastName = document.getElementById("lastName").value;
+        //     // Student S = new Student();
+        //     // S.STList.Add(new Student { FirstName =firstName, LastName = lastName });
+        //     // Redirect to Page2 with the parameters in the query string
+        //     window.location.href = '/Index?FirstName=' + encodeURIComponent(firstName) + '&LastName=' + encodeURIComponent(lastName);
+        // }
+
+
+        sendDataTOAdd(){firstName
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var gender = document.getElementById("gender").value;
+            var birthDate = document.getElementById("birthDate").value;
+            var age = document.getElementById("age").value;
+            var class1 = document.getElementById("class1").value;
+            var address = document.getElementById("address").value;
+
+            window.location.href = '/Index?FirstName=' + encodeURIComponent(firstName) + '&LastName=' + encodeURIComponent(lastName) +
+                '&Gender=' + encodeURIComponent(gender) + '&BirthDate=' + encodeURIComponent(birthDate) + '&Age=' + encodeURIComponent(age) + 
+                + '&Class=' + encodeURIComponent(class1)+'&Address=' + encodeURIComponent(address);
+        }
+    </script>
+    
+</body>
+</html>

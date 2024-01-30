@@ -76,7 +76,7 @@ namespace Our_Student
             TimeSpan Span = TimeEnd - TimeStart;
             var InYears = Math.Truncate(Span.TotalDays / 365);
             text_Age.Text = Convert.ToString(InYears);
-           
+
         }
 
 
@@ -244,7 +244,7 @@ namespace Our_Student
             TableStudent.Age = int.Parse(text_Age.Text);
             TableStudent.Class = text_Class.Text.Trim();
             TableStudent.Address = textBox_Address.Text.Trim();
-         
+
             Our_Student Our_Student2 = new Our_Student(studentList);
             this.Hide();
             Our_Student2.Show();
@@ -359,6 +359,11 @@ namespace Our_Student
             Panel p = sender as Panel;
             ControlPaint.DrawBorder(e.Graphics, p.DisplayRectangle, Color.Black, ButtonBorderStyle.Solid);
             //ControlPaint.DrawBorder(e.Graphics, this.panel1.ClientRectangle, Color.DarkBlue, ButtonBorderStyle.Solid);
+        }
+
+        private void groupBox_EditStudent_Enter(object sender, EventArgs e)
+        {
+
         }
 
 

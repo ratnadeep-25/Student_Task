@@ -1,0 +1,130 @@
+﻿@page
+@model Student.Pages.EditModel
+@{
+}
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    table {
+        position: absolute;
+        top: 175px;
+        left: 135px;
+        border-collapse: collapse;
+        width: 950px;
+        height: 120px;
+    }
+
+    th, td {
+        border: 1px solid black;
+        text-align: Left;
+        padding: 8px;
+        top: 125px; /* Distance from the bottom */
+    }
+
+    th {
+        background-color: steelblue;
+    }
+
+    td {
+        background-color: YellowGreen;
+    }
+
+    #table-container {
+        width: 60%;
+        margin: 50px auto; /* Center the table */
+    }
+
+    .contains {
+        width: 80%;
+        margin: 20px auto;
+        border: solid 3px;
+        border-color: steelblue;
+        top: 10px;
+        left: 75px;
+        width: 1000px;
+        height: 500px;
+    }
+
+    .rounded-button {
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: steelblue;
+        color: black;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        position: fixed; /* Fixed position */
+        top: 100px; /* Distance from the bottom */
+        right: 145px; /* Distance from the right */
+        cursor: pointer;
+        height: 130;
+        width: 50;
+    }
+
+    .text-center {
+    }
+
+    .OSP {
+        top: 275px; /* Distance from the bottom */
+        right: 90px; /* Distance from the right */
+        cursor: pointer;
+        height: 130;
+        width: 50;
+        color: black;
+        color-rendering: black;
+        colo
+    }
+</style>
+
+<body>
+    <div class="contains">
+        <header class="text-center">
+            <h1>Edit Student</h1>
+        </header>
+
+        <div>
+            <button class="rounded-button" onclick="AddFunction1"><a asp-page="/Add Student">Add Student</a></button>
+        </div>
+
+
+
+        <div class="text-center" id="table-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Display the list of students -->
+                    @foreach (var student in Model.OurStudentList)
+                    {
+                        <tr>
+                            <td>@student.FirstName</td>
+                            <td>@student.LastName</td>
+                            <td>@student.Gender</td>
+                            <td>@student.Age</td>
+                            <td>@student.Class</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
